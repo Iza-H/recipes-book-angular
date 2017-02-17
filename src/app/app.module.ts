@@ -6,12 +6,16 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header.component';
 import { RecipesComponent } from './recipes';
+import { RecipeListComponent } from './recipes/recipe-list';
+import { RecipeItemComponent } from './recipes/recipe-list';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RecipesComponent
+    RecipesComponent,
+    RecipeListComponent,
+    RecipeItemComponent
   ],
   imports: [
     BrowserModule,
