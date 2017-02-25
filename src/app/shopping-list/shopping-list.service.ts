@@ -3,7 +3,7 @@ import { Ingredient } from '../shared';
 
 @Injectable()
 export class ShoppingListService {
-  private items: Ingredient[];
+  private items: Ingredient[] = [];
 
   constructor() { }
 
@@ -12,7 +12,7 @@ export class ShoppingListService {
   }
 
   addItems(items: Ingredient[]){
-    Array.prototype.push.apply(this.items, items);
+    items.forEach( e => this.items.push(e));
   }
 
 }
