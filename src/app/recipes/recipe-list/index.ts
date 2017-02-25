@@ -1,2 +1,2 @@
-import { RecipeItemComponent } from './recipe-item.component';
-import { RecipeListComponent } from './recipe-list.component';
+export { RecipeItemComponent } from './recipe-item.component';
+export { RecipeListComponent } from './recipe-list.component';

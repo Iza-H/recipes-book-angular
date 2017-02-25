@@ -1,8 +1,8 @@
 <div class="roe">
   <div class="col-md-5">
-    Recipe List
+    <iz-recipe-list (recipeSelected)="selectedRecipe = $event"></iz-recipe-list>
   </div>
   <div class="col-md-7">
-    Recipe Detail
+    <iz-recipe-detail [selectedRecipe]="selectedRecipe"></iz-recipe-detail>
   </div>
 </div>

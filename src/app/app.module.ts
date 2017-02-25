@@ -6,8 +6,8 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header.component';
 import { RecipesComponent } from './recipes';
-import { RecipeListComponent } from './recipes/recipe-list';
-import { RecipeItemComponent } from './recipes/recipe-list';
+import { RecipeListComponent, RecipeItemComponent } from './recipes/recipe-list';
+import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,8 @@ import { RecipeItemComponent } from './recipes/recipe-list';
     HeaderComponent,
     RecipesComponent,
     RecipeListComponent,
-    RecipeItemComponent
+    RecipeItemComponent,
+    RecipeDetailComponent,
   ],
   imports: [
     BrowserModule,
