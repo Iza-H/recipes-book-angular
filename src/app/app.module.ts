@@ -10,6 +10,9 @@ import { RecipeListComponent, RecipeItemComponent } from './recipes/recipe-list'
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { ShoppingListComponent, ShoppingListAddComponent, ShoppingListService } from './shopping-list';
 import { DropdownDirective } from './dropdown.directive';
+import { routing } from './app.routing';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { RecipeStartComponent } from './recipes/recipe-start.component';
 
 
 @NgModule({
@@ -23,11 +26,14 @@ import { DropdownDirective } from './dropdown.directive';
     ShoppingListComponent,
     ShoppingListAddComponent,
     DropdownDirective,
+    RecipeEditComponent,
+    RecipeStartComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [ ShoppingListService ],
   bootstrap: [AppComponent]
