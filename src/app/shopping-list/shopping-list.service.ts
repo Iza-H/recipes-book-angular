@@ -15,4 +15,8 @@ export class ShoppingListService {
     items.forEach( e => this.items.push(e));
   }
 
+  addItem(item: Ingredient){
+    this.items.push(item);
+  }
+
 }
