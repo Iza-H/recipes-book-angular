@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs/Rx';
 import { RecipeService } from "../recipe.service";
 import { FormArray, FormGroup, FormControl, Validators, FormBuilder } from "@angular/forms";
 import { Recipe } from '../recipe';
+import { Ingredient } from '../../shared/ingredient'
 
 
 
@@ -97,4 +98,17 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
     this.navigateBack();
   }
 
+  onRemoveItem(index: number) {
+    (<FormArray>this.recipeForm.controls['ingredients']).removeAt(index);
+  }
+
+  onAddItem(name: string, amount: number) {
+    (<FormArray>this.recipeForm.controls['ingredients']).push(
+      new FormGroup({
+          name: new FormControl(name, Validators.required),
+          amount: new FormControl(amount, [Validators.required, Validators.pattern("\\d+")])
+        }
+      )
+    )
+  }
 }

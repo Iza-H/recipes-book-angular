@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header.component';
-import { RecipesComponent } from './recipes';
+import { RecipesComponent, RecipeService } from './recipes';
 import { RecipeListComponent, RecipeItemComponent } from './recipes/recipe-list';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { ShoppingListComponent, ShoppingListAddComponent, ShoppingListService } from './shopping-list';
@@ -36,7 +36,7 @@ import { RecipeStartComponent } from './recipes/recipe-start.component';
     routing,
     ReactiveFormsModule
   ],
-  providers: [ ShoppingListService ],
+  providers: [ ShoppingListService, RecipeService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

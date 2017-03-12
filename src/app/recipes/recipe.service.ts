@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Headers, Http } from '@angular/http';
 import { Recipe } from './recipe';
 import { Ingredient } from '../shared';
 
@@ -20,7 +21,7 @@ export class RecipeService {
       [ new Ingredient('Ingredient1', 1)]),
   ];
 
-  constructor() { }
+  constructor(private http: Http) { }
 
   getRecipes() {
     return this.recipes;
@@ -39,6 +40,14 @@ export class RecipeService {
 
   editRecipe(oldRecipe: Recipe, newRecipe: Recipe) {
     this.recipes[this.recipes.indexOf(oldRecipe)] = newRecipe;
+  }
+
+  storeData(){
+    const body = JSON.stringify(this.recipes);
+    const headers = new Headers( {
+      'Content-Type': 'application/json'
+    });
+    return this.http.post('https://recipes-e088f.firebaseio.com/recipes.json', body,{headers: headers});
   }
 
 }
